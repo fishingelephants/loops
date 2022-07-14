@@ -41,7 +41,7 @@ function submitHandler(event) {
   submitButton.style.display = "none";
   loadingButton.style.display = "flex";
 
-  var formBody = "userGroup=FromLoops&email=" + encodeURIComponent(formInput.value);
+  var formBody = "userGroup=Loops&email=" + encodeURIComponent(formInput.value);
   fetch(event.target.action, {
     method: "POST",
     body: formBody,
