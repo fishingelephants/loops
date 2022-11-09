@@ -1,4 +1,4 @@
-<style>@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');</style><div class="newsletter-form-container"><form class="newsletter-form" action="https://app.loops.so/api/newsletter-form/cl52na64o054109lcc7yszus4" method="POST" style="display: flex; flex-direction: row; align-items: center; justify-content: center; width: 100%;"><input class="newsletter-form-input" name="newsletter-form-input" type="email" autocomplete="newsletter-form" placeholder="Your email here" required="" style="font-family: Inter, sans-serif; color: rgb(0, 0, 0); font-size: 14px; margin: 0px 10px 0px 0px; width: 100%; max-width: 300px; min-width: 100px; background: rgb(255, 255, 255); border: 1px solid rgb(209, 213, 219); box-sizing: border-box; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px; border-radius: 6px; padding: 8px 12px;"><button type="submit" class="newsletter-form-button" style="background: rgb(212, 61, 92); font-size: 14px; color: rgb(255, 255, 255); font-family: Inter, sans-serif; display: flex; width: min-content; max-width: 300px; white-space: nowrap; height: 38px; align-items: center; justify-content: center; flex-direction: row; padding: 9px 17px; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px; border-radius: 6px; text-align: center; font-style: normal; font-weight: 500; line-height: 20px; border: none; cursor: pointer;">Subscribe</button><button type="button" class="newsletter-loading-button" style="background: rgb(212, 61, 92); font-size: 14px; color: rgb(255, 255, 255); font-family: Inter, sans-serif; display: none; width: min-content; max-width: 300px; white-space: nowrap; height: 38px; align-items: center; justify-content: center; flex-direction: row; padding: 9px 17px; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px; border-radius: 6px; text-align: center; font-style: normal; font-weight: 500; line-height: 20px; border: none; cursor: pointer;">Please wait...</button></form><div class="newsletter-success" style="display: none; align-items: center; justify-content: center; width: 100%;"><p class="newsletter-success-message" style="font-family: Inter, sans-serif; color: rgb(0, 0, 0); font-size: 16px;">Thanks for subscribing! I'll get back to you.</p></div><div class="newsletter-error" style="display: none; align-items: center; justify-content: center; width: 100%;"><p class="newsletter-error-message" style="font-family: Inter, sans-serif; color: rgb(185, 28, 28); font-size: 16px;">Oops! Something went wrong, please try again</p></div>
+<style>@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');</style><div class="newsletter-form-container"><form class="newsletter-form" action="https://app.loops.so/api/newsletter-form/cl52na64o054109lcc7yszus4" method="POST" style="display: flex; flex-direction: row; align-items: center; justify-content: center; width: 100%;"><input class="newsletter-form-input" name="newsletter-form-input" type="name" autocomplete="newsletter-form" placeholder="Your name" required="" style="font-family: Inter, sans-serif; color: rgb(0, 0, 0); font-size: 14px; margin: 0px 10px 0px 0px; width: 100%; max-width: 300px; min-width: 100px; background: rgb(255, 255, 255); border: 1px solid rgb(209, 213, 219); box-sizing: border-box; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px; border-radius: 6px; padding: 8px 12px;"><input class="newsletter-form-input" name="newsletter-form-input" type="email" autocomplete="newsletter-form" placeholder="Your email here" required="" style="font-family: Inter, sans-serif; color: rgb(0, 0, 0); font-size: 14px; margin: 0px 10px 0px 0px; width: 100%; max-width: 300px; min-width: 100px; background: rgb(255, 255, 255); border: 1px solid rgb(209, 213, 219); box-sizing: border-box; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px; border-radius: 6px; padding: 8px 12px;"><button type="submit" class="newsletter-form-button" style="background: rgb(89, 61, 212); font-size: 14px; color: rgb(255, 255, 255); font-family: Inter, sans-serif; display: flex; width: min-content; max-width: 300px; white-space: nowrap; height: 38px; align-items: center; justify-content: center; flex-direction: row; padding: 9px 17px; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px; border-radius: 6px; text-align: center; font-style: normal; font-weight: 500; line-height: 20px; border: none; cursor: pointer;">Subscribe to Weekly Digest</button><button type="button" class="newsletter-loading-button" style="background: rgb(89, 61, 212); font-size: 14px; color: rgb(255, 255, 255); font-family: Inter, sans-serif; display: none; width: min-content; max-width: 300px; white-space: nowrap; height: 38px; align-items: center; justify-content: center; flex-direction: row; padding: 9px 17px; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px; border-radius: 6px; text-align: center; font-style: normal; font-weight: 500; line-height: 20px; border: none; cursor: pointer;">Please wait...</button></form><div class="newsletter-success" style="display: none; align-items: center; justify-content: center; width: 100%;"><p class="newsletter-success-message" style="font-family: Inter, sans-serif; color: rgb(0, 0, 0); font-size: 16px;">Thanks for subscribing! I'll get back to you.</p></div><div class="newsletter-error" style="display: none; align-items: center; justify-content: center; width: 100%;"><p class="newsletter-error-message" style="font-family: Inter, sans-serif; color: rgb(185, 28, 28); font-size: 16px;">Oops! Something went wrong, please try again</p></div>
 <button 
 class='newsletter-back-button'
 type='button' 
@@ -20,6 +20,14 @@ function submitHandler(event) {
   var submitButton = container.querySelector(".newsletter-form-button");
   var loadingButton = container.querySelector(".newsletter-loading-button");
 
+  const rateLimit = () => {
+    errorContainer.style.display = "flex";
+    errorMessage.innerText = "Too many signups, please try again in a little while";
+    submitButton.style.display = "none";
+    formInput.style.display = "none";
+    backButton.style.display = "block";
+  }
+
   // Compare current time with time of previous sign up
   var time = new Date();
   var timestamp = time.valueOf();
@@ -28,12 +36,7 @@ function submitHandler(event) {
   // If last sign up was less than a minute ago
   // display error
   if (previousTimestamp && Number(previousTimestamp) + 60000 > timestamp) {
-    errorContainer.style.display = "flex";
-    errorMessage.innerText =
-      "Too many signups, please try again in a little while";
-    submitButton.style.display = "none";
-    formInput.style.display = "none";
-    backButton.style.display = "block";
+    rateLimit();
     return;
   }
   localStorage.setItem("loops-form-timestamp", timestamp);
@@ -41,7 +44,7 @@ function submitHandler(event) {
   submitButton.style.display = "none";
   loadingButton.style.display = "flex";
 
-  var formBody = "userGroup=Loops&email=" + encodeURIComponent(formInput.value);
+  var formBody = "userGroup=Airtable%20Wiz&email=" + encodeURIComponent(formInput.value);
   fetch(event.target.action, {
     method: "POST",
     body: formBody,
@@ -68,6 +71,11 @@ function submitHandler(event) {
       }
     })
     .catch(error => {
+      // check for cloudflare error
+      if (error.message === "Failed to fetch") {
+        rateLimit();
+        return;
+      }
       // If error caught
       // display error message if available
       errorContainer.style.display = "flex";
@@ -96,6 +104,7 @@ function resetFormHandler(event) {
   formInput.style.display = "flex";
   submitButton.style.display = "flex";
 }
+
 var formContainers = document.getElementsByClassName(
   "newsletter-form-container"
 );
